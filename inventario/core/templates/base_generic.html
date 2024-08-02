@@ -1,0 +1,37 @@
+<!-- core/templates/base_generic.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventario</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Inventario</h1>
+        <nav>
+            <a href="{% url 'entrada_list' %}">Entradas</a>
+            <a href="{% url 'inventario_list' %}">Inventario</a>
+            <a href="{% url 'salida_list' %}">Salidas</a>
+            <a href="{% url 'tarea_list' %}">Tareas</a>
+            {% if user.is_staff %}
+                <a href="{% url 'entrada_create' %}">Nueva Entrada</a>
+                <a href="{% url 'salida_create' %}">Nueva Salida</a>
+                <a href="{% url 'tarea_create' %}">Nueva Tarea</a>
+                <a href="{% url 'export_csv' %}">Exportar CSV</a>
+            {% endif %}
+            <a href="{% url 'logout' %}">Logout</a>
+        </nav>
+        <form class="buscador" method="GET" action="{% url 'buscar' %}">
+            <input class="input" id="buscador" type="text" name="q" value="{{ request.GET.q }}" placeholder="Buscar...">
+            <input class="input" type="date" name="fecha" value="{{ request.GET.fecha }}">
+            <input class="input" type="number" name="cantidad" value="{{ request.GET.cantidad }}" placeholder="Cantidad">
+            <button type="submit">Buscar</button>
+        </form>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

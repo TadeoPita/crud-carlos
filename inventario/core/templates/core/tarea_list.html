@@ -1,0 +1,28 @@
+<!-- core/templates/core/tarea_list.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Tareas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th class="fecha_tarea">Fecha de Entrega</th>
+        <th class="prioridad_tarea">Prioridad</th>
+        <th class="completada_tarea">Completada</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tarea in tareas %}
+        <tr>
+          <td >{{ tarea.titulo }}</td>
+          <td>{{ tarea.descripcion }}</td>
+          <td class="fecha_tarea">{{ tarea.fecha_entrega }}</td>
+          <td class="prioridad_tarea">{{ tarea.prioridad }}</td>
+          <td class="completada_tarea">{{ tarea.completada }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

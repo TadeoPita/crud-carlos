@@ -1,0 +1,12 @@
+<!-- core/templates/core/salida_confirm_delete.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Confirmar Eliminación de Salida</h2>
+  <p>¿Estás seguro que deseas eliminar la salida "{{ object }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+    <a href="{% url 'salida_list' %}">Cancelar</a>
+  </form>
+{% endblock %}

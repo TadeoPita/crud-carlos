@@ -1,0 +1,35 @@
+<!-- core/templates/core/inventario_list.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Inventario</h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="codigo_inventario">Código</th>
+        <th class="descripcion_inventario">Descripción</th>
+        <th class="fecha_in">Fecha</th>
+        <th>Color</th>
+        <th>Bolsas</th>
+        <th class="entradas">Entradas</th>
+        <th class="salidas">Salidas</th>
+        <th class="inventarios">Inventario</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for inventario in inventarios %}
+        <tr>
+          <td class="codigo_inventario">{{ inventario.codigo }}</td>
+          <td class="descripcion_inventario">{{ inventario.descripcion }}</td>
+          <td class="fecha_in">{{ inventario.fecha|date:"d/m/Y" }}</td>
+          <td>{{ inventario.color }}</td>
+          <td>{{ inventario.bolsas }}</td>
+          <td id="entradas">{{ inventario.entradas }}</td>
+          <td id="salidas">{{ inventario.salidas }}</td>
+          <td id="inventarios">{{ inventario.inventario }}</td>
+          
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

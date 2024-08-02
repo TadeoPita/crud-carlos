@@ -1,0 +1,230 @@
+/* core/static/core/styles.css */
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    margin: 0 15px;
+    color: #c2c2c2;
+    text-decoration: none;
+    text-shadow: 0px 0px 20px rgb(36, 73, 174);
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.057);
+}
+
+form:hover {
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.087);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+td {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+}
+
+th {
+    font-weight: 800;
+    font-size: 25px;
+    background-color: #f2f2f2;
+}
+
+.buscador {
+    background: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 20px;
+    margin: 30px auto;
+    margin-bottom: 10px;
+}
+
+.input {
+    border-radius: 20px;
+    border: none;
+    padding: 7px;
+    outline: none;
+}
+
+#buscador {
+    border-radius: 20px;
+}
+
+#entradas {
+    background-color: rgb(223, 94, 255);
+    color: white;
+}
+
+#inventarios {
+    background-color: #4589a0;
+    color: white;
+}
+
+#salidas {
+    background-color: rgb(255, 89, 89);
+    color: rgb(255, 255, 255);
+}
+
+.salidas {
+    color: white;
+    background-color: rgb(255, 89, 89);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.inventarios {
+    color: white;
+    background-color: #4589a0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.entradas {
+    color: white;
+    background-color: rgb(223, 94, 255);
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.cantidad_list {
+    background-color: rgb(223, 94, 255);
+    color: white;
+    
+}
+
+.codigo_list {
+    background-color: rgb(255, 89, 89);
+    color: white;
+}
+
+.fecha_list {
+    background-color: #4589a0;
+    color: white;
+}
+.descripcion_list{
+    background-color: #ffb812;
+    color: white;
+}
+
+.cantidad_salida {
+    background-color: rgb(223, 94, 255);
+    color: white;
+    
+}
+
+.codigo_salida {
+    background-color: rgb(255, 89, 89);
+    color: white;
+}
+
+.fecha_salida {
+    background-color: #4589a0;
+    color: white;
+}
+.descripcion_salida{
+    background-color: #ffb812;
+    color: white;
+}
+
+.fecha_tarea{
+    background-color: rgb(223, 94, 255);
+    color: white;
+}
+
+.prioridad_tarea{
+    background-color: rgb(255, 89, 89);
+    color: white;
+}
+.completada_tarea{
+    background-color: #4589a0;
+    color: white;
+}
+.codigo_inventario{
+    background-color: #263a3d;
+    color: white;
+}
+.descripcion_inventario{
+    background-color: #84b6f4;
+    color: white;
+}
+.fecha_in{
+    background-color: #5ed764;
+    color: white;
+}

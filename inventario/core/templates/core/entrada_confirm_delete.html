@@ -1,0 +1,12 @@
+<!-- core/templates/core/entrada_confirm_delete.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Confirmar Eliminación de Entrada</h2>
+  <p>¿Estás seguro que deseas eliminar la entrada "{{ object }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+    <a href="{% url 'entrada_list' %}">Cancelar</a>
+  </form>
+{% endblock %}

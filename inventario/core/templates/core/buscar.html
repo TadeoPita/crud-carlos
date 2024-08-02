@@ -1,0 +1,171 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h3{
+      font-size:55px;
+      font-weight:800;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #34495e;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ecf0f1;
+    }
+
+    tr:hover {
+      background-color: #dcdde1;
+    }
+
+    tbody td {
+      border-bottom: 1px solid #bdc3c7;
+    }
+
+    .container {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .section {
+      margin: 150px 0;
+    }
+  </style>
+
+  <div class="container">
+    <h2>Resultados de la Búsqueda</h2>
+
+    <div class="section">
+      <h3>Entradas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Color</th>
+            <th>Bolsas</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entrada in entradas %}
+            <tr>
+              <td>{{ entrada.codigo }}</td>
+              <td>{{ entrada.descripcion }}</td>
+              <td>{{ entrada.cantidad }}</td>
+              <td>{{ entrada.fecha|date:"d/m/Y" }}</td>
+              <td>{{ entrada.color }}</td>
+              <td>{{ entrada.bolsas }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>Salidas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+            <th>Obra</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for salida in salidas %}
+            <tr>
+              <td>{{ salida.codigo }}</td>
+              <td>{{ salida.descripcion }}</td>
+              <td>{{ salida.cantidad }}</td>
+              <td>{{ salida.fecha|date:"d/m/Y" }}</td>
+              <td>{{ salida.obra }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>Tareas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Fecha de Entrega</th>
+            <th>Prioridad</th>
+            <th>Completada</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tarea in tareas %}
+            <tr>
+              <td>{{ tarea.titulo }}</td>
+              <td>{{ tarea.descripcion }}</td>
+              <td>{{ tarea.fecha_entrega|date:"d/m/Y" }}</td>
+              <td>{{ tarea.prioridad }}</td>
+              <td>{{ tarea.completada }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h3>Inventario</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Entradas</th>
+            <th>Salidas</th>
+            <th>Inventario</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for inventario in inventarios %}
+            <tr>
+              <td>{{ inventario.codigo }}</td>
+              <td>{{ inventario.descripcion }}</td>
+              <td>{{ inventario.entradas }}</td>
+              <td>{{ inventario.salidas }}</td>
+              <td>{{ inventario.inventario }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

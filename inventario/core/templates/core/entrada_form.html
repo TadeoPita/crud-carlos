@@ -1,0 +1,16 @@
+<!-- core/templates/core/entrada_form.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>{% if form.instance.pk %}Editar Entrada{% else %}Nueva Entrada{% endif %}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <datalist id="codigo_list">
+      {% for item in inventarios %}
+        <option value="{{ item.codigo }}">{{ item.descripcion }}</option>
+      {% endfor %}
+    </datalist>
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}

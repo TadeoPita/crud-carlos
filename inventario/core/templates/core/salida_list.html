@@ -1,0 +1,37 @@
+<!-- core/templates/core/salida_list.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Salidas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="codigo_salida">Código</th>
+        <th class="descripcion_salida">Descripción</th>
+        <th class="cantidad_salida">Cantidad</th>
+        <th class="fecha_salida">Fecha</th>
+        <th>Obra</th>
+        {% if user.is_staff %}
+          <th>Acciones</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for salida in salidas %}
+        <tr>
+          <td class="codigo_salida">{{ salida.codigo }}</td>
+          <td class="descripcion_salida">{{ salida.descripcion }}</td>
+          <td class="cantidad_salida">{{ salida.cantidad }}</td>
+          <td class="fecha_salida">{{ salida.fecha|date:"d/m/Y" }}</td>
+          <td>{{ salida.obra }}</td>
+          {% if user.is_staff %}
+            <td>
+              <a href="{% url 'salida_edit' salida.pk %}">Editar</a>
+              
+            </td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

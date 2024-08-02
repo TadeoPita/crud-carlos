@@ -1,0 +1,38 @@
+<!-- core/templates/core/entrada_list.html -->
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Entradas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="codigo_list">Código</th>
+        <th class="descripcion_list">Descripción</th>
+        <th class="cantidad_list">Cantidad</th>
+        <th class="fecha_list">Fecha</th>
+        <th>Color</th>
+        <th>Bolsas</th>
+        {% if user.is_staff %}
+          <th>Acciones</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for entrada in entradas %}
+        <tr>
+          <td class="codigo_list">{{ entrada.codigo }}</td>
+          <td class="descripcion_list">{{ entrada.descripcion }}</td>
+          <td class="cantidad_list">{{ entrada.cantidad }}</td>
+          <td class="fecha_list">{{ entrada.fecha|date:"d/m/Y" }}</td>
+          <td>{{ entrada.color }}</td>
+          <td>{{ entrada.bolsas }}</td>
+          {% if user.is_staff %}
+            <td>
+              <a href="{% url 'entrada_edit' entrada.pk %}">Editar</a>
+            </td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
