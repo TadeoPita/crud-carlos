@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "inventario/wsgi.py",
+        "src": "nombre_proyecto/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb" }
       }
