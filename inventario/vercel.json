@@ -14,7 +14,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "nombre_proyecto/wsgi.py"
+        "dest": "inventario/wsgi.py"
       }
     ]
   }
