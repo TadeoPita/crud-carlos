@@ -56,8 +56,9 @@ platformdirs==3.5.1
 pluggy==1.5.0
 proto-plus==1.23.0
 protobuf==4.24.4
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
 pyarrow==13.0.0
-psycopg2-binary==2.9.6
 pyasn1==0.6.0
 pyasn1_modules==0.4.0
 pydeck==0.8.1b0
