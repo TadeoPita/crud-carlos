@@ -45,7 +45,6 @@ markdown-it-py==3.0.0
 MarkupSafe==2.1.2
 matplotlib==3.9.0
 mdurl==0.1.2
-mysqlclient==2.2.4
 numpy==1.26.1
 oauthlib==3.2.2
 packaging==23.2
@@ -56,8 +55,6 @@ platformdirs==3.5.1
 pluggy==1.5.0
 proto-plus==1.23.0
 protobuf==4.24.4
-psycopg2==2.9.9
-psycopg2-binary==2.9.9
 pyarrow==13.0.0
 pyasn1==0.6.0
 pyasn1_modules==0.4.0
